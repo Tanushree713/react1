@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import Person from './Person' ;
+import Button from './Button';
+import Header from './Header';
+import List from './List';
+import DynamicGreets from './DynamicGreeting';
+import {Add , Sub ,Mul ,Div} from './Calculator';
 function App() {
+
+   function clickMe(){
+     console.log("HandleME!!") ;
+   }
+
+
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Person name="Tanu" age="20" />
+        <Button text="Click-Me" onClick={clickMe}/>
+        <Header title ="Hi!! Tanushree here."/>
+        <List items={["Home" ,"About" , "Contact"]} />
+        <DynamicGreets  />
+        <Add a="10" b="20"/>
+        <Sub a="10" b="20"/>
+        <Mul a="10" b="20"/>
+        <Div a="1" b="3"/>
+    </>
   );
 }
 
